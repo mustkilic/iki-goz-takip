@@ -1,0 +1,4 @@
+const CACHE='ikigoz-shell-v1';const FILES=['./','./index.html','./style.css','./model.js','./app.js','./manifest.webmanifest','./icon.png','./icon-512.png','./icon.svg'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('ikigoz-shell-')&&k!==CACHE).map(k=>caches.delete(k))))));
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==self.location.origin)return;const paths=FILES.map(f=>new URL(f,self.registration.scope).pathname);if(!paths.includes(u.pathname))return;e.respondWith(fetch(e.request).then(r=>{if(r.ok&&r.type!=='opaqueredirect'&&new URL(r.url).origin===self.location.origin){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return r}).catch(()=>caches.match(e.request).then(r=>r||Response.error())))});
