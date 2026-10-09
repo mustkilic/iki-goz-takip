@@ -1,9 +1,10 @@
 const $=id=>document.getElementById(id),{dateKey,addMonths,formatDate,normalize}=GoZ;
 let state;try{state=normalize(JSON.parse(localStorage.getItem('ikigoz-v1')))}catch{state=normalize(null)}
+if(state.headset==='Trust · model bilinmiyor')state.headset='Trust Exa 21494';
 let elapsed=0,running=false,lastTick=0,wake=null,previewTick=null,sessionDate=null;
 function toast(s){$('toast').textContent=s;$('toast').hidden=false;setTimeout(()=>$('toast').hidden=true,4000)}
 function persist(){try{localStorage.setItem('ikigoz-v1',JSON.stringify(state));return true}catch{toast('Depolama kullanılamıyor. Bu kayıt yalnızca açık oturumda kalır; verilerini indir.');return false}}
-function tab(name){if(!['today','plan','library','settings'].includes(name))name='today';document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!==name);document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));history.replaceState(null,'','#'+name)}
+function tab(name){if(!['today','plan','library','headset','settings'].includes(name))name='today';document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!==name);document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));history.replaceState(null,'','#'+name)}
 document.querySelectorAll('[data-tab],[data-go]').forEach(b=>b.onclick=()=>tab(b.dataset.tab||b.dataset.go));
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function rows(records,empty){return records.length?records.map(r=>`<div class="record-row"><div><strong>${formatDate(r.date)}</strong><p>${esc(r.note||'Seans kaydı')}</p></div><div><span class="record-time">${r.minutes.toLocaleString('tr-TR')} dk</span><br><button class="text-btn" data-delete="${esc(r.id)}">Sil</button></div></div>`).join(''):`<p class="muted">${empty}</p>`}
@@ -22,7 +23,7 @@ function openRecord(fromTimer=false){$('recordDate').max=dateKey();$('recordDate
 $('finishTimer').onclick=()=>{tick();running=false;releaseWake();updateTimer();openRecord(true)};$('manualOpen').onclick=()=>openRecord();$('closeRecord').onclick=()=>$('recordDialog').close();
 $('recordForm').onsubmit=e=>{e.preventDefault();state.records.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random(),date:$('recordDate').value,minutes:Number($('recordMinutes').value),note:$('recordNote').value});const ok=persist();if($('recordDialog').dataset.fromTimer==='1'){elapsed=0;sessionDate=null}$('recordDialog').close();render();if(ok)toast('Seans kaydedildi.')};
 $('export').onclick=()=>{const blob=new Blob([JSON.stringify({app:'İki Göz',exportedAt:new Date().toISOString(),...state},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='iki-goz-'+dateKey()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
-function closePreview(){clearInterval(previewTick);previewTick=null;$('stereo').hidden=true;releaseWake()}
-$('preview').onclick=()=>{if(running){toast('Önizlemeden önce sayacı duraklat.');return}$('stereo').hidden=false;let n=20;$('previewCount').textContent=n;requestWake();previewTick=setInterval(()=>{$('previewCount').textContent=--n;if(n<=0)closePreview()},1000)};$('closePreview').onclick=closePreview;document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview()});
+function closePreview(){if(window.closeFitter)window.closeFitter();else $('stereo').hidden=true;releaseWake()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview()});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){if(running){tick();running=false;updateTimer()}closePreview();releaseWake()}});window.addEventListener('pagehide',()=>{if(running)tick();running=false;releaseWake()});window.addEventListener('beforeunload',e=>{if(elapsed>0){e.preventDefault();e.returnValue=''}});
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});populate();render();tab(location.hash.slice(1));
