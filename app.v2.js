@@ -26,4 +26,4 @@ $('export').onclick=()=>{const blob=new Blob([JSON.stringify({app:'İki Göz',ex
 function closePreview(){if(window.closeFitter)window.closeFitter();else $('stereo').hidden=true;releaseWake()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview()});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){if(running){tick();running=false;updateTimer()}closePreview();releaseWake()}});window.addEventListener('pagehide',()=>{if(running)tick();running=false;releaseWake()});window.addEventListener('beforeunload',e=>{if(elapsed>0){e.preventDefault();e.returnValue=''}});
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});populate();render();tab(location.hash.slice(1));
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw-v2.js').catch(()=>{});populate();render();tab(location.hash.slice(1));
