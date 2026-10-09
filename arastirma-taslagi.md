@@ -31,6 +31,43 @@ Tedavi etkinliği iddiası taşıyan sonraki araştırma için ayrı bir müdaha
 | 4. ay sonu | Ana değerlendirme, kayıp veri ve yan etki incelemesi | Devam kararı klinik inceleme sonrası |
 | İsteğe bağlı 5. ay | Önceden tanımlanmış uzatma veya izlem değerlendirmesi | Önceden belirlenmiş çalışma kararına bağlı |
 
+## PC/VR oyunu: aynı video mu, göz başına kontrast mu?
+
+İki göze **aynı video karesi** yansıtmak teknik olarak mümkündür; bu, yerleşim ve senkron oynatma testidir. Ambliyopide hedeflenen **dikoptik** müdahale ise genelde **aynı içeriğin göz başına farklı kontrast** (bazen farklı katman veya bulanıklık) ile sunulmasıdır. Yani: aynı film iki göze gidebilir; tedavi mantığı için sol ve sağ kontrastın ayrı parametre olması gerekir. Grup ortalamalarından (ör. yayınlanmış çalışma tablolarından) bireysel günlük yüzde türetmek güvenli değildir.
+
+Standart plan açıkken VR film listesi çift alanda göz başına kontrast, parlaklık ve doygunluk filtresi uygular (canvas/CSS; fiziksel kalibrasyon değil). Plan kapalıysa tek ekran modu kullanılabilir.
+
+## Klinik çalışmalardan türetilen parametreler (özet)
+
+| Kaynak | Baskın göz başlangıç kontrastı | Tembel göz | İlerleme | Renk / parlaklık |
+|---|---|---|---|---|
+| [PMC8328197](https://pmc.ncbi.nlm.nih.gov/articles/PMC8328197/) | %20 sabit başlangıç | %100 | Başarılı seans sonrası günde +10%, +5% veya sabit protokoller (8 hafta) | Belirtilmemiş |
+| [PMC6584719](https://pmc.ncbi.nlm.nih.gov/articles/PMC6584719/) (JAMA) | Ortalama ~%23 (bireysel ölçüm) | %100 oyun öğeleri | Koşullu günde ~+%15 (≥15 dk, skor) | Kırmızı-yeşil **anaglif** (göz ayırma; kontrast tedavisi değil) |
+| [PMC8246520](https://pmc.ncbi.nlm.nih.gov/articles/PMC8246520/) | %20 | %100 | Otomatik günlük artış | Anaglif |
+| Kontrast dengeli filmler ([PubMed 31103562](https://pubmed.ncbi.nlm.nih.gov/31103562/)) | Düşük | Tam | Film içi denge | Renk kaydırması yok |
+
+**Renk:** Klinik oyunlardaki kırmızı/yeşil ayrımı yan yana VR alanında uygulanmaz; bu sürümde renk kanalı değiştirilmez.
+
+**Parlaklık / doygunluk:** Kontrastla aynı yönde, yalnızca baskın gözde hafif ek azaltma (yardımcı salience düşürme; ayrı randomize kanıt yok).
+
+## 120 günlük CSV
+
+Programım → indir. Sütunlar: `tarih`, kontrast, parlaklık, doygunluk (sol/sağ), `hekim_notu`.
+
+### Uygulamadaki güncel 120 gün (sol tembel)
+
+Takvim gününe göre; başarılı oyun skoru şartı yok (evde film izleme için basitleştirilmiş).
+
+| Gün | Sol (tembel) kontrast | Sağ (baskın) kontrast | Baskın göz parlaklık / doygunluk |
+|---|---:|---:|---|
+| 1–7 | 100 | 100 | 100 / 100 |
+| 8–14 | 100 | 20 | ~82% / ~90% (otomatik) |
+| 15–21 | 100 | 25 | kademeli artış |
+| … her 7 gün | 100 | +5 puan | eşlik eden filteler |
+| ~gün 113+ | 100 | 100 | 100 / 100 |
+
+Sağ tembel seçilirse sol/sağ rolleri terslenir. Hekim manuel kontrast girerse parlaklık/doygunluk manuel kontrasttan türetilir.
+
 ## Kontrast ve ilerleme: açık bırakılması gereken alanlar
 
 Başlangıç gözler arası kontrast oranı, en düşük/en yüksek değer, değişim adımı, günlük kullanım dozu ve ilerleme eşiği bu taslakta verilmedi. Bunlar katılımcının ölçümlerine ve test edilecek müdahalenin validasyonuna dayanmalıdır. Sadece takvim gününün ilerlemesi bir ayar artırma ölçütü değildir. Video rengi veya gamma değişimi de standartlaştırılmış klinik kontrast dengesinin eşdeğeri değildir.
