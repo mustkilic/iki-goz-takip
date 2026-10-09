@@ -64,7 +64,19 @@ Takvim gününe göre; başarılı oyun skoru şartı yok (evde film izleme içi
 | 8–14 | 100 | 20 | ~82% / ~90% (otomatik) |
 | 15–21 | 100 | 25 | kademeli artış |
 | … her 7 gün | 100 | +5 puan | eşlik eden filteler |
-| ~gün 113+ | 100 | 100 | 100 / 100 |
+| ~gün 113–120 | 100 | 100 | 100 / 100 |
+
+### İsteğe bağlı ek ay (gün 121–150, sol tembel)
+
+JAAPOS kontrast artış çalışmasındaki “4. haftada baskın gözü %20’ye sıfırla” kolunun takvim uyarlamasıdır. Çocuk çalışmasıdır; yetişkin için kanıtlanmış 30 gün reçetesi değildir. İki gözü 30 gün %100 tutmak bu kaynakta pekiştirme protokolü değildir.
+
+| Gün | Sol (tembel) | Sağ (baskın) |
+|---|---:|---:|
+| 121–126 | 100 | 20 |
+| 127–132 | 100 | 40 |
+| 133–138 | 100 | 60 |
+| 139–144 | 100 | 80 |
+| 145–150 | 100 | 100 |
 
 Sağ tembel seçilirse sol/sağ rolleri terslenir. Hekim manuel kontrast girerse parlaklık/doygunluk manuel kontrasttan türetilir.
 
