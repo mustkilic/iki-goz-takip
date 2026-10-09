@@ -4,7 +4,7 @@ if(state.headset==='Trust · model bilinmiyor')state.headset='Trust Exa 21494';
 let elapsed=0,running=false,lastTick=0,wake=null,previewTick=null,sessionDate=null;
 function toast(s){$('toast').textContent=s;$('toast').hidden=false;setTimeout(()=>$('toast').hidden=true,4000)}
 function persist(){try{localStorage.setItem('ikigoz-v1',JSON.stringify(state));return true}catch{toast('Depolama kullanılamıyor. Bu kayıt yalnızca açık oturumda kalır; verilerini indir.');return false}}
-function tab(name){if(!['today','plan','library','headset','settings'].includes(name))name='today';document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!==name);document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));history.replaceState(null,'','#'+name)}
+function tab(name){if(!['today','plan','watch','library','headset','settings'].includes(name))name='today';document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!==name);document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));history.replaceState(null,'','#'+name)}
 document.querySelectorAll('[data-tab],[data-go]').forEach(b=>b.onclick=()=>tab(b.dataset.tab||b.dataset.go));
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function rows(records,empty){return records.length?records.map(r=>`<div class="record-row"><div><strong>${formatDate(r.date)}</strong><p>${esc(r.note||'Seans kaydı')}</p></div><div><span class="record-time">${r.minutes.toLocaleString('tr-TR')} dk</span><br><button class="text-btn" data-delete="${esc(r.id)}">Sil</button></div></div>`).join(''):`<p class="muted">${empty}</p>`}
@@ -26,4 +26,4 @@ $('export').onclick=()=>{const blob=new Blob([JSON.stringify({app:'İki Göz',ex
 function closePreview(){if(window.closeFitter)window.closeFitter();else $('stereo').hidden=true;releaseWake()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview()});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){if(running){tick();running=false;updateTimer()}closePreview();releaseWake()}});window.addEventListener('pagehide',()=>{if(running)tick();running=false;releaseWake()});window.addEventListener('beforeunload',e=>{if(elapsed>0){e.preventDefault();e.returnValue=''}});
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw-v2.js').catch(()=>{});populate();render();tab(location.hash.slice(1));
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw-v3.js').catch(()=>{});populate();render();tab(location.hash.slice(1));
