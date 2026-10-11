@@ -1,5 +1,5 @@
 (function(root){
-  const DB='ikigoz-film-files';
+  const DB='ikigoz-film-files-720';
   const urls=new Map();
   function openDb(){return new Promise((ok,bad)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>{r.result.createObjectStore('files')};r.onsuccess=()=>ok(r.result);r.onerror=()=>bad(r.error)})}
   function req(request){return new Promise((ok,bad)=>{request.onsuccess=()=>ok(request.result);request.onerror=()=>bad(request.error)})}
