@@ -3,40 +3,66 @@
     "id": "bf1f3fb5-b119-4f9f-9930-8e20e892b898",
     "title": "Big Buck Bunny",
     "duration": 596,
-    "url": "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898.mp4",
     "page": "https://video.blender.org/videos/watch/bf1f3fb5-b119-4f9f-9930-8e20e892b898",
     "license": "CC BY 3.0",
     "credit": "Blender Foundation / Blender Institute",
-    "licenseSource": "https://peach.blender.org/about/"
+    "licenseSource": "https://peach.blender.org/about/",
+    "parts": [
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-00.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-01.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-02.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-03.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-04.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-05.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-06.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-07.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-08.mp4",
+      "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898-09.mp4"
+    ]
   },
   {
     "id": "cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5",
     "title": "Elephants Dream",
     "duration": 654,
-    "url": "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5.mp4",
     "page": "https://video.blender.org/videos/watch/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5",
     "license": "CC BY 2.5",
     "credit": "Blender Foundation / Netherlands Media Art Institute",
-    "licenseSource": "https://orange.blender.org/press/"
+    "licenseSource": "https://orange.blender.org/press/",
+    "parts": [
+      "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-00.mp4",
+      "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-01.mp4",
+      "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-02.mp4",
+      "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-03.mp4",
+      "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-04.mp4",
+      "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-05.mp4"
+    ]
   },
   {
     "id": "0eb052d0-fd51-43e6-aa33-ecdbf77a5d40",
     "title": "Sintel",
     "duration": 888,
-    "url": "./media/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40.mp4",
     "page": "https://video.blender.org/videos/watch/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40",
     "license": "CC BY 3.0",
     "credit": "Blender Foundation / Blender Institute",
-    "licenseSource": "https://studio.blender.org/remixing/"
+    "licenseSource": "https://studio.blender.org/remixing/",
+    "parts": [
+      "./media/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40-00.mp4",
+      "./media/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40-01.mp4",
+      "./media/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40-02.mp4"
+    ]
   },
   {
     "id": "8533ea43-4271-4a57-9694-e9d0b35e1aa1",
     "title": "Tears of Steel",
     "duration": 734,
-    "url": "./media/8533ea43-4271-4a57-9694-e9d0b35e1aa1.mp4",
     "page": "https://video.blender.org/videos/watch/8533ea43-4271-4a57-9694-e9d0b35e1aa1",
     "license": "CC BY 3.0",
     "credit": "Blender Foundation / Blender Institute",
-    "licenseSource": "https://mango.blender.org/about/"
+    "licenseSource": "https://mango.blender.org/about/",
+    "parts": [
+      "./media/8533ea43-4271-4a57-9694-e9d0b35e1aa1-00.mp4",
+      "./media/8533ea43-4271-4a57-9694-e9d0b35e1aa1-01.mp4",
+      "./media/8533ea43-4271-4a57-9694-e9d0b35e1aa1-02.mp4"
+    ]
   }
 ]
