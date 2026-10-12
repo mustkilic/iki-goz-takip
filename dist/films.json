@@ -1,0 +1,42 @@
+[
+  {
+    "id": "bf1f3fb5-b119-4f9f-9930-8e20e892b898",
+    "title": "Big Buck Bunny",
+    "duration": 596,
+    "page": "https://video.blender.org/videos/watch/bf1f3fb5-b119-4f9f-9930-8e20e892b898",
+    "license": "CC BY 3.0",
+    "credit": "Blender Foundation / Blender Institute",
+    "licenseSource": "https://peach.blender.org/about/",
+    "url": "./media/bf1f3fb5-b119-4f9f-9930-8e20e892b898.mp4"
+  },
+  {
+    "id": "cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5",
+    "title": "Elephants Dream",
+    "duration": 654,
+    "page": "https://video.blender.org/videos/watch/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5",
+    "license": "CC BY 2.5",
+    "credit": "Blender Foundation / Netherlands Media Art Institute",
+    "licenseSource": "https://orange.blender.org/press/",
+    "url": "./media/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5.mp4"
+  },
+  {
+    "id": "0eb052d0-fd51-43e6-aa33-ecdbf77a5d40",
+    "title": "Sintel",
+    "duration": 888,
+    "page": "https://video.blender.org/videos/watch/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40",
+    "license": "CC BY 3.0",
+    "credit": "Blender Foundation / Blender Institute",
+    "licenseSource": "https://studio.blender.org/remixing/",
+    "url": "./media/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40.mp4"
+  },
+  {
+    "id": "8533ea43-4271-4a57-9694-e9d0b35e1aa1",
+    "title": "Tears of Steel",
+    "duration": 734,
+    "page": "https://video.blender.org/videos/watch/8533ea43-4271-4a57-9694-e9d0b35e1aa1",
+    "license": "CC BY 3.0",
+    "credit": "Blender Foundation / Blender Institute",
+    "licenseSource": "https://mango.blender.org/about/",
+    "url": "./media/8533ea43-4271-4a57-9694-e9d0b35e1aa1.mp4"
+  }
+]
